@@ -1,0 +1,354 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #0f172a;
+  color: #f8fafc;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Subtle Matrix-style background overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url("background.webp");
+  background-size: cover;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+/* ===== NAVBAR ===== */
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background: #0f172a;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  color: #38bdf8;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(56,189,248,0.7);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-links li a {
+  color: #f1f5f9;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+  font-size: 1.05rem;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #38bdf8;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: #f1f5f9;
+  cursor: pointer;
+}
+
+/* ===== HERO ===== */
+#hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 3rem;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #f1f5f9;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  width: 100%;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1 1 500px;
+  min-width: 280px;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  text-shadow: 0 0 15px rgba(56,189,248,0.7);
+}
+
+.hero-text h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #94a3b8;
+  line-height: 1.3;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #cbd5e1;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Hero Image */
+.hero-image {
+  flex: 0 0 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 280px;
+  max-width: 100%;
+  border-radius: 50%;
+  border: 4px solid #22c55e;
+  box-shadow: 0 0 25px rgba(34,197,94,0.5);
+}
+
+/* Buttons */
+.btn {
+  padding: 0.7rem 1.5rem;
+  background: #38bdf8;
+  color: #0f172a;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #22c55e;
+  box-shadow: 0 0 15px rgba(34,197,94,0.8);
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #38bdf8;
+  color: #38bdf8;
+}
+
+.btn-secondary:hover {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  color: #38bdf8;
+  font-size: 2.2rem;
+  text-shadow: 0 0 10px rgba(56,189,248,0.6);
+}
+
+/* ===== SKILLS ===== */
+#skills {
+  background: #0f172a;
+  color: #f1f5f9;
+}
+
+.skills-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+  color: #94a3b8;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.skill-card {
+  background: #0f172a;
+  border: 1px solid #38bdf8;
+  border-left: 4px solid #22c55e;
+  font-family: "Fira Code", monospace;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  width: 150px;
+  transition: 0.3s;
+}
+
+.skill-card img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 0.8rem;
+  filter: brightness(0) invert(1) drop-shadow(0 0 2px #38bdf8);
+}
+
+.skill-card:hover {
+  background: #1e293b;
+  box-shadow: 0 0 15px rgba(56,189,248,0.7);
+  transform: translateY(-6px);
+}
+
+/* ===== PROJECTS ===== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.project-card {
+  border: 1px solid #22c55e;
+  border-radius: 10px;
+  background: #0f172a;
+  padding: 1.5rem;
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  box-shadow: 0 0 15px rgba(34,197,94,0.7);
+  transform: translateY(-5px);
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 0.8rem;
+  color: #38bdf8;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.project-card a:hover {
+  color: #22c55e;
+  transform: scale(1.05);
+}
+
+/* ===== SOCIAL ICONS ===== */
+.social-links {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.social-links a {
+  color: #38bdf8;
+  font-size: 2rem;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: #22c55e;
+  transform: scale(1.2);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #1e293b;
+  color: #94a3b8;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: #1e293b;
+    padding: 2rem;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    border-radius: 12px;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .skills-container {
+    gap: 1.5rem;
+  }
+  .skill-card {
+    width: 120px;
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-text h1 { font-size: 2.2rem; }
+  .hero-text h2 { font-size: 1.2rem; }
+  .hero-text p { font-size: 1rem; }
+  .hero-buttons { flex-direction: column; gap: 0.8rem; }
+  .hero-image img { width: 180px; }
+}
