@@ -28,6 +28,11 @@ body{background:var(--bg);color:var(--text);height:100vh;overflow:hidden}
   height:36px;background:#0a0a0a;border-bottom:1px solid #1f1f1f;
   display:flex;align-items:center;padding:0 12px;gap:8px;
 }
+#mobileInput{
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
 .dot{width:10px;height:10px;border-radius:50%}
 .dot.red{background:#ff003c}
 .dot.yellow{background:#facc15}
@@ -247,3 +252,4 @@ section>h2::after{
   .logo{font-size:1.2rem}
   .btn{padding:.7rem 1.4rem;font-size:.9rem}
 }
+
