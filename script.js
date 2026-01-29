@@ -3,18 +3,30 @@ const portfolio = document.getElementById('main-portfolio')
 const typed = document.getElementById('typed')
 const body = document.querySelector('.terminal-body')
 const promptLine = document.querySelector('.prompt')
+const mobileInput = document.getElementById('mobileInput')
 
 let buffer = ''
 let busy = false
 
-document.addEventListener('keydown', e => {
-  if (busy) return
+mobileInput.focus()
 
-  if (e.key === 'Backspace') buffer = buffer.slice(0, -1)
-  else if (e.key === 'Enter') handle(buffer.trim().toLowerCase())
-  else if (e.key.length === 1) buffer += e.key
+terminal.addEventListener('click', () => {
+  mobileInput.focus()
+})
 
+mobileInput.addEventListener('input', e => {
+  buffer = e.target.value
   typed.textContent = buffer
+})
+
+mobileInput.addEventListener('keydown', e => {
+  if (busy) return
+  if (e.key === 'Enter') {
+    handle(buffer.trim().toLowerCase())
+    mobileInput.value = ''
+    buffer = ''
+    typed.textContent = ''
+  }
 })
 
 function handle(cmd) {
@@ -24,7 +36,6 @@ function handle(cmd) {
   } else {
     addLine(`command not found: ${cmd}`, 'var(--red)')
   }
-  buffer = ''
 }
 
 function addLine(text, color) {
