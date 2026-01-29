@@ -1,186 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rohit Sharma | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Font Awesome Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <!-- Navbar -->
-  <header>
-    <nav id="navbar">
-      <h1 class="logo">Welcome!</h1>
-      <ul class="nav-links">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    </nav>
-  </header>
 
-  <!-- Hero Section -->
-<section id="hero">
-  <div class="hero-container">
-    <div class="hero-text">
-      <h1>Hi, I’m <span class="highlight">Rohit Sharma</span></h1>
-      <h2>Cybersecurity Student & Tech Enthusiast</h2>
-     <p>
-  Passionate about <strong>ethical hacking, network exploitation,</strong>
-  and breaking systems to make them stronger.
-</p>
-
-      <div class="hero-buttons">
-        <a href="#projects" class="btn">View Projects</a>
-        <a href="#contact" class="btn btn-secondary">Contact Me</a>
-      </div>
+<div id="terminal">
+  <div class="terminal-window">
+    <div class="terminal-bar">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+      <span class="title">secure-terminal</span>
     </div>
-    <div class="hero-image">
-      <img src="image.png" alt="Image">
+    <div class="terminal-body">
+      <div class="line">Booting secure kernel v2.0...</div>
+      <div class="line">[ OK ] Mounting encrypted filesystem</div>
+      <div class="line">[ OK ] Loading security modules</div>
+      <div class="line"></div>
+      <div class="line" style="color: var(--green); font-weight: bold;">Access restricted</div>
+      <div class="line" id="hint">Type <span style="color:var(--green)">sudo</span> to continue...</div>
+      <div class="line"></div>
+      <div class="line prompt">rohit@secure:~$ <span id="typed"></span><span class="blink">█</span></div>
+    </div>
+  </div>
+</div>
+
+<div id="main-portfolio">
+
+<header>
+  <div class="logo">Rohit Sharma's Portfolio</div>
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="hero">
+  <div>
+    <h1>Hi, I'm <span>Rohit Sharma</span></h1>
+    <h2>Cybersecurity Student • Future Red Teamer</h2>
+    <p class="hero-text">
+      I’m a BCA student specializing in Cybersecurity, obsessed with understanding how systems break — and how to make them unbreakable.
+      I train every day to think like an attacker and defend like a professional.
+    </p>
+    <div>
+      <a href="#projects" class="btn">View Projects</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
     </div>
   </div>
 </section>
 
-
-  <!-- About Section -->
 <section id="about">
   <h2>About Me</h2>
- <p>
-  I’m Rohit Sharma, a BCA Cybersecurity student driven by a strong interest in
-  <strong>ethical hacking, offensive security, and network exploitation</strong>.
-  My journey began with curiosity about how systems and networks function—and more
-  importantly, how they can be broken.
-</p>
-
-<p>
-  I enjoy exploring areas such as <strong>network protocols, vulnerability analysis,
-  attack techniques, and exploitation fundamentals</strong>.
-  My academic focus is on building a solid foundation in
-  <strong>cybersecurity core concepts</strong>, while continuously learning how real-world
-  attacks are performed and defended against.
-</p>
-
-  <p>
-    Outside academics, I keep myself updated with the latest trends in cybersecurity, 
-    practice problem-solving, and continuously aim to improve my technical skills to 
-    become a <strong>skilled cybersecurity professional</strong>.
+  <p class="center-text">
+    I am a BCA Cybersecurity student driven by curiosity for how digital systems work, fail, and can be protected.<br><br>
+    My journey revolves around ethical hacking, network security, and penetration testing. I actively practice through CTFs,
+    labs, and real-world simulations to understand modern attack vectors and their defenses.<br><br>
+    I believe a good security professional must think like an attacker. That’s why I focus on reconnaissance, exploitation,
+    privilege escalation, and post-exploitation — not just theory, but hands-on skills.
   </p>
 </section>
 
-<!-- Skills Section -->
 <section id="skills">
   <h2>Skills</h2>
-  <p class="skills-subtitle">Technologies & Skills I’m proficient in</p>
-
-  <div class="skills-container">
-    <div class="skill-card">
-      <p>Pen Testing Tools</p>
-    </div>
-    <div class="skill-card">
-      <p>C / C++</p>
-    </div>
-    <div class="skill-card">
-      <p>HTML / CSS / JavaScript</p>
-    </div>
-    <div class="skill-card">
-      <p>MySQL</p>
-    </div>
-    <div class="skill-card">
-      <p>Python</p>
-    </div>
-    <div class="skill-card">
-      <p>Linux Command Line</p>
-    </div>
+  <div class="grid">
+    <div class="card"><strong>Penetration Testing Tools</strong><p>Nmap, Burp Suite, Wireshark, Nikto, Gobuster, Wappalyzer</p></div>
+    <div class="card"><strong>Programming</strong><p>C, C++, Python, Java</p></div>
+    <div class="card"><strong>Web Technologies</strong><p>HTML, CSS, JavaScript</p></div>
+    <div class="card"><strong>Databases</strong><p>MySQL</p></div>
+    <div class="card"><strong>Linux & Shell</strong><p>Linux Command line (CLI)</p></div>
+    <div class="card"><strong>Security Concepts</strong><p>Networking Basics, OWASP Top 10, VAPT</p></div>
   </div>
 </section>
 
-
-  <!-- Projects -->
- <section id="projects">
+<section id="projects">
   <h2>Projects</h2>
-  <p class="projects-subtitle">
-    A showcase of my cybersecurity & development work
-  </p>
-
-  <div class="project-grid">
-    <!-- Project 1 -->
-    <div class="project-card">
-  <h3>Phishing Link Detection Tool</h3>
-  <p>
-    A Python-based tool that scans URLs to detect phishing links and generates detailed reports to help users stay safe online.
-  </p>
-  <a href="https://github.com/rohit0472/TrapScan" target="_blank">
-    View on GitHub
-  </a>
-</div>
-
-    <!-- Project 2 -->
-    
-
-    <!-- Project 3 -->
-    <div class="project-card">
-      <h3>Amazon Clone</h3>
-      <p>
-        A front-end Amazon clone built using only HTML and CSS to practice layout design and responsive styling.
-      </p>
-      <a href="https://github.com/rohit0472/Amazon-Clone" target="_blank">
-        View on GitHub
-      </a>
+  <div class="grid">
+    <div class="card">
+      <h3>Phishing Link Detection Tool</h3>
+      <p>A Python-based security tool that analyzes URLs using multiple heuristics to detect phishing attempts and generate risk reports.</p>
+      <p class="project-link"><a href="https://github.com/rohit0472/TrapScan" target="_blank">View on GitHub →</a></p>
     </div>
-
-    <!-- Project 4 -->
-    <div class="project-card">
-      <h3>Food Delivery Website</h3>
-      <p>
-        A dynamic food delivery platform built with HTML, CSS, and JavaScript, featuring interactive menus and order simulation.
-      </p>
-      <a href="https://github.com/rohit0472/QuickEats" target="_blank">
-        View on GitHub
-      </a>
+    <div class="card">
+      <h3>Personal Frontend Portfolio</h3>
+      <p>A personal portfolio website made with HTML, CSS, JavaScript and little bit hacker vibes.</p>
     </div>
-   <!-- Coming Soon Project -->
-<div class="project-card coming-soon">
-  <h3>More Projects</h3>
-  <p>More projects coming soon...</p>
-</div>
+    <div class="card">
+      <h3>Amazon Clone (Frontend)</h3>
+      <p>A fully responsive Amazon-style e-commerce UI built with pure HTML and CSS, focused on layout precision and real-world design replication.</p>
+      <p class="project-link"><a href="https://github.com/rohit0472/Amazon-Clone" target="_blank">View on GitHub →</a></p>
+    </div>
+    <div class="card">
+      <h3>QuickEats – Food Delivery UI</h3>
+      <p>An interactive food ordering interface with menu browsing and cart logic, built using HTML, CSS, and JavaScript.</p>
+      <p class="project-link"><a href="https://github.com/rohit0472/QuickEats" target="_blank">View on GitHub →</a></p>
+    </div>
   </div>
 </section>
 
-
- <!-- Contact -->
-<section id="contact">
-  <h2>Contact Me</h2>
-  <p class="social-text">Let’s connect:</p>
-  <div class="social-links">
-  <a href="https://www.instagram.com/__tusharr______?igsh=MWRpNmpkbHJuYnludg==" target="_blank">
-    <i class="fab fa-instagram"></i>
-  </a>
-  <a href="https://www.linkedin.com/in/rohit-sharma-316912321" target="_blank">
-    <i class="fab fa-linkedin"></i>
-  </a>
-  <a href="https://github.com/rohit0472" target="_blank">
-    <i class="fab fa-github"></i>
-  </a>
-</div>
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="experience-list">
+    <div class="exp-item">
+      <div class="exp-line"></div>
+      <div class="exp-content">
+        <h3>Remote VAPT Intern (Ongoing)</h3>
+        <p class="exp-org">RK InfoSec Solutions</p>
+        <p class="exp-time">Feb 2026 – Present</p>
+        <p class="exp-desc">Currently learning real-world security workflows, tools, and methodologies under professional guidance.</p>
+        <ul>
+          <li>Training on reconnaissance and vulnerability assessment</li>
+          <li>Learning industry-standard security tools</li>
+          <li>Understanding penetration testing processes</li>
+          <li>Improving reporting skills</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-line"></div>
+      <div class="exp-content">
+        <h3>Virtual Cybersecurity Intern</h3>
+        <p class="exp-org">CyberWarlab</p>
+        <p class="exp-time">Dec 2025 – Jan 2026</p>
+        <p class="exp-desc">Hands-on, CTF-based training on penetration testing concepts and attacker mindset.</p>
+        <ul>
+          <li>Learned core penetration testing concepts and applied them in hands-on, real-world style CTF labs</li>
+          <li>Practiced enumeration, web exploitation, authentication attacks, and post-exploitation techniques</li>
+          <li>Gained experience in thinking like an attacker and documenting findings through basic security reports</li>
+          <li>Improved problem-solving skills by working through realistic vulnerable lab environments</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-line"></div>
+      <div class="exp-content">
+        <h3>Cybersecurity & Ethical Hacking Intern</h3>
+        <p class="exp-org">Cyber Shakti Foundation</p>
+        <p class="exp-time">Aug 2025 – Oct 2025</p>
+        <p class="exp-desc">Learned foundational cybersecurity concepts, common attack vectors, and basic defense techniques.</p>
+        <ul>
+          <li>Understand core concepts of ethical hacking and cybersecurity</li>
+          <li>Explored common vulnerabilities, attack types, and basic defense techniques</li>
+          <li>Gained introductory exposure to penetration testing and security awareness</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-line"></div>
+      <div class="exp-content">
+        <h3>Project-Based Learning Trainee</h3>
+        <p class="exp-org">CSRBOX Foundation (IBM SkillsBuild)</p>
+        <p class="exp-time">July 2025 – Aug 2025</p>
+        <p class="exp-desc">Built frontend projects using HTML, CSS, and JavaScript through task-based learning.</p>
+        <ul>
+          <li>Built small web projects using HTML, CSS, and JavaScript</li>
+          <li>Gained hands-on experience through real tasks rather than theory-only learning</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
+<section id="education">
+  <h2>Education</h2>
+  <div class="education-wrap">
+    <div class="edu-card">
+      <h3>Bachelor of Computer Applications (Cybersecurity)</h3>
+      <p class="edu-org">Jaipur National University</p>
+      <p class="edu-time">2024 – 2027</p>
+      <p class="edu-time">GPA : 8.4</p>
+      <p class="edu-desc">
+        Program focused on core computing subjects and cybersecurity fundamentals,
+        including networking, system security, ethical hacking, and programming.
+      </p>
+      <ul>
+        <li>Networking & System Security</li>
+        <li>Ethical Hacking Fundamentals</li>
+        <li>Programming Languages</li>
+        <li>Linux & Database Concepts</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
+<section id="contact">
+  <h2>Let's Connect</h2>
+  <p class="center-text">Open to collaborations, security discussions, CTFs and opportunities.</p>
+  <div class="contact-wrap">
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/rohit-sharma-316912321" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/rohit0472" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="mailto:rohitsharmaa0906@gmail.com?subject=Contact from Portfolio"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p class="email-text"><a href="mailto:rohitsharmaa0906@gmail.com">rohitsharmaa0906@gmail.com</a></p>
+  </div>
+</section>
 
-  <footer>
-    <p>© 2025 Rohit Sharma. All Rights Reserved.</p>
-  </footer>
+<footer class="site-footer">
+  &copy; 2026 Rohit Sharma. All rights reserved.
+</footer>
 
-  <script src="script.js"></script>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
-
-
-
