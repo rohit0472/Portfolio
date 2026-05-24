@@ -3,219 +3,426 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rohit Sharma | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+  <title>Rohit Sharma — Software & Security</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
+<!-- ══════════════ TERMINAL ══════════════ -->
 <div id="terminal">
   <div class="terminal-window">
     <div class="terminal-bar">
       <span class="dot red"></span>
       <span class="dot yellow"></span>
       <span class="dot green"></span>
-      <span class="title">secure-terminal</span>
+      <span class="title">portfolio — secure-interface v2.1</span>
     </div>
-     <div class="terminal-body">
-    <div class="line">Booting secure kernel v2.0...</div>
-    <div class="line">[ OK ] Mounting encrypted filesystem</div>
-    <div class="line">[ OK ] Loading security modules</div>
-    <div class="line"></div>
-    <div class="line" style="color: var(--green); font-weight: bold;">Access restricted</div>
-    <div class="line" id="hint">Type <span style="color:var(--green)">sudo</span> to continue...</div>
-    <div class="line"></div>
-    <div class="line prompt">rohit@secure:~$ <span id="typed"></span><span class="blink">█</span></div>
+    <div class="terminal-body" id="termBody">
+      <div class="line muted">Booting secure portfolio interface...</div>
+      <div class="line muted">Initializing developer environment...</div>
+      <div class="line muted">[ OK ] Loading security modules</div>
+      <div class="line muted">[ OK ] Mounting encrypted workspace</div>
+      <div class="line">&nbsp;</div>
+      <div class="line info">Authentication required.</div>
+      <div class="line muted">Type <span style="color:var(--blue);font-weight:600">sudo</span> to authenticate access...</div>
+      <div class="line">&nbsp;</div>
+      <div class="line prompt" id="promptLine">rohit@portfolio:~$ <span id="typed"></span><span class="blink">█</span></div>
+    </div>
     <input id="mobileInput" type="text" autocomplete="off" autocapitalize="off" spellcheck="false">
   </div>
-  </div>
 </div>
 
+<!-- Mobile nav drawer — outside main-portfolio so position:fixed works correctly -->
+<div class="nav-backdrop" id="navBackdrop"></div>
+<div class="nav-drawer" id="navDrawer">
+  <a href="#hero">Home</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#experience">Experience</a>
+  <a href="#education">Education</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- ══════════════ MAIN PORTFOLIO ══════════════ -->
 <div id="main-portfolio">
 
-<header>
-  <div class="logo">Rohit Sharma's Portfolio</div>
-  <nav>
-    <a href="#hero">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<section class="hero" id="hero">
-  <div>
-    <h1>Hi, I'm <span>Rohit Sharma</span></h1>
-    <h2>Cybersecurity Student • Future Red Teamer</h2>
-    <p class="hero-text">
-      I’m a BCA student specializing in Cybersecurity, obsessed with understanding how systems break — and how to make them unbreakable.
-      I train every day to think like an attacker and defend like a professional.
-    </p>
-    <div>
-      <a href="#projects" class="btn">View Projects</a>
-      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+  <!-- ── Header ── -->
+  <header id="header">
+    <div class="logo">
+      <div class="logo-name">Rohit Sharma</div>
+      <div class="logo-sub">Software &amp; Security</div>
     </div>
-  </div>
-</section>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p class="center-text">
-    I am a BCA Cybersecurity student driven by curiosity for how digital systems work, fail, and can be protected.<br><br>
-    My journey revolves around ethical hacking, network security, and penetration testing. I actively practice through CTFs,
-    labs, and real-world simulations to understand modern attack vectors and their defenses.<br><br>
-    I believe a good security professional must think like an attacker. That’s why I focus on reconnaissance, exploitation,
-    privilege escalation, and post-exploitation — not just theory, but hands-on skills.
-  </p>
-</section>
-
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="grid">
-    <div class="card"><strong>Penetration Testing Tools</strong><p>Nmap, Burp Suite, Wireshark, Nikto, Gobuster, Wappalyzer</p></div>
-    <div class="card"><strong>Programming</strong><p>C, C++, Python, Java</p></div>
-    <div class="card"><strong>Web Technologies</strong><p>HTML, CSS, JavaScript</p></div>
-    <div class="card"><strong>Databases</strong><p>MySQL</p></div>
-    <div class="card"><strong>Linux & Shell</strong><p>Linux Command line (CLI)</p></div>
-    <div class="card"><strong>Security Concepts</strong><p>Networking Basics, OWASP Top 10, VAPT</p></div>
-  </div>
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Phishing Link Detection Tool</h3>
-      <p>A Python-based security tool that analyzes URLs using multiple heuristics to detect phishing attempts and generate risk reports.</p>
-      <p class="project-link"><a href="https://github.com/rohit0472/TrapScan" target="_blank">View on GitHub →</a></p>
-    </div>
-    <div class="card">
-      <h3>Personal Frontend Portfolio</h3>
-      <p>A personal portfolio website made with HTML, CSS, JavaScript and little bit hacker vibes.</p>
-    </div>
-    <div class="card">
-      <h3>Amazon Clone (Frontend)</h3>
-      <p>A fully responsive Amazon-style e-commerce UI built with pure HTML and CSS, focused on layout precision and real-world design replication.</p>
-      <p class="project-link"><a href="https://github.com/rohit0472/Amazon-Clone" target="_blank">View on GitHub →</a></p>
-    </div>
-    <div class="card">
-      <h3>QuickEats – Food Delivery UI</h3>
-      <p>An interactive food ordering interface with menu browsing and cart logic, built using HTML, CSS, and JavaScript.</p>
-      <p class="project-link"><a href="https://github.com/rohit0472/QuickEats" target="_blank">View on GitHub →</a></p>
-    </div>
-  </div>
-</section>
-
-<section id="experience">
-  <h2>Experience</h2>
-  <div class="experience-list">
-    <div class="exp-item">
-      <div class="exp-line"></div>
-      <div class="exp-content">
-        <h3>Remote VAPT Intern</h3>
-        <p class="exp-org">RK InfoSec Solutions</p>
-        <p class="exp-time">Feb 2026 – March 2026</p>
-        <p class="exp-desc">Learned real-world security workflows, tools, and methodologies under professional guidance.</p>
-        <ul>
-          <li>Training on reconnaissance and vulnerability assessment</li>
-          <li>Learned industry-standard security tools</li>
-          <li>Understood penetration testing processes</li>
-          <li>Improved reporting skills</li>
-        </ul>
+  <!-- ── Hero ── -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="hero-left reveal">
+        <div class="hero-eyebrow">Where Software Meets Security</div>
+        <h1>Building in<br><em class="hero-brand">Software &amp; Security</em></h1>
+        <div class="hero-tagline">Learning &bull; Building &bull; Growing</div>
+        <p>I'm a BCA student who enjoys building things and understanding how systems work — from developing software to building secure and practical software systems.</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary"><i class="fas fa-code"></i> View Projects</a>
+          <a href="#contact" class="btn btn-ghost"><i class="fas fa-paper-plane"></i> Let's Connect</a>
+        </div>
+        <div class="hero-micro">Software Development &nbsp;·&nbsp; Cybersecurity &nbsp;·&nbsp; Problem Solving</div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="hero-card">
+          <div class="hero-card-label">current_status.json</div>
+          <div class="stat-row">
+            <div class="stat">
+              <div class="stat-val">4+</div>
+              <div class="stat-lbl">Internships</div>
+            </div>
+            <div class="stat">
+              <div class="stat-val">8.4</div>
+              <div class="stat-lbl">GPA</div>
+            </div>
+          </div>
+          <div class="stat-row">
+            <div class="stat">
+              <div class="stat-val">4+</div>
+              <div class="stat-lbl">Projects</div>
+            </div>
+            <div class="stat">
+              <div class="stat-val">2027</div>
+              <div class="stat-lbl">Graduating</div>
+            </div>
+          </div>
+          <div class="hero-tags">
+            <span class="tag">C++</span>
+            <span class="tag">Python</span>
+            <span class="tag">Software Development</span>
+            <span class="tag">Cybersecurity</span>
+            <span class="tag">Problem Solving</span>
+            <span class="tag">Web Security</span>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="exp-item">
-      <div class="exp-line"></div>
-      <div class="exp-content">
-        <h3>Virtual Cybersecurity Intern</h3>
-        <p class="exp-org">CyberWarlab</p>
-        <p class="exp-time">Dec 2025 – Jan 2026</p>
-        <p class="exp-desc">Hands-on, CTF-based training on penetration testing concepts and attacker mindset.</p>
-        <ul>
-          <li>Learned core penetration testing concepts and applied them in hands-on, real-world style CTF labs</li>
-          <li>Practiced enumeration, web exploitation, authentication attacks, and post-exploitation techniques</li>
-          <li>Gained experience in thinking like an attacker and documenting findings through basic security reports</li>
-          <li>Improved problem-solving skills by working through realistic vulnerable lab environments</li>
-        </ul>
-      </div>
-    </div>
-    <div class="exp-item">
-      <div class="exp-line"></div>
-      <div class="exp-content">
-        <h3>Cybersecurity & Ethical Hacking Intern</h3>
-        <p class="exp-org">Cyber Shakti Foundation</p>
-        <p class="exp-time">Aug 2025 – Oct 2025</p>
-        <p class="exp-desc">Learned foundational cybersecurity concepts, common attack vectors, and basic defense techniques.</p>
-        <ul>
-          <li>Understand core concepts of ethical hacking and cybersecurity</li>
-          <li>Explored common vulnerabilities, attack types, and basic defense techniques</li>
-          <li>Gained introductory exposure to penetration testing and security awareness</li>
-        </ul>
-      </div>
-    </div>
-    <div class="exp-item">
-      <div class="exp-line"></div>
-      <div class="exp-content">
-        <h3>Project-Based Learning Trainee (Front-End Web Development)</h3>
-        <p class="exp-org">CSRBOX Foundation (in collaboration with IBM SkillsBuild)</p>
-        <p class="exp-time">July 2025 – Aug 2025</p>
-        <p class="exp-desc">Built frontend projects using HTML, CSS, and JavaScript through task-based learning.</p>
-        <ul>
-          <li>Built small web projects using HTML, CSS, and JavaScript</li>
-          <li>Gained hands-on experience through real tasks rather than theory-only learning</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="education">
-  <h2>Education</h2>
-  <div class="education-wrap">
-    <div class="edu-card">
-      <h3>Bachelor of Computer Applications (Cybersecurity)</h3>
-      <p class="edu-org">Jaipur National University</p>
-      <p class="edu-time">2024 – 2027</p>
-      <p class="edu-time">GPA : 8.4</p>
-      <p class="edu-desc">
-        Program focused on core computing subjects and cybersecurity fundamentals,
-        including networking, system security, ethical hacking, and programming.
-      </p>
-      <ul>
-        <li>Networking & System Security</li>
+  <!-- ── About ── -->
+  <section id="about">
+    <div class="section-label">about me</div>
+    <h2>Just Someone Who <span class="accent">Likes Building Things</span></h2>
+    <div class="about-grid reveal">
+      <div class="about-text">
+        <p>I'm Rohit — a BCA student at Jaipur National University who got into tech because I genuinely enjoy figuring out how things work. That curiosity has taken me into <strong>software development</strong>, web projects, and — naturally — into wanting to understand how systems can break and how to build them better.</p>
+        <p>I enjoy building things and understanding how systems work — from writing code and shipping projects to thinking about how secure systems should be designed. Security isn't my whole identity; it's more like a lens I use to think more carefully about what I build.</p>
+        <p>I've done four internships, built real tools, and I'm still very much in learning mode — which is honestly the part I enjoy most. I'd rather ship something imperfect and learn from it than wait until everything's perfect.</p>
+      </div>
+      <div class="about-values">
+        <div class="value-item">
+          <h4><span class="vi">🛠</span> I Learn by Building</h4>
+          <p>Projects teach me more than any course. Every build is a chance to understand something better and get sharper at solving real problems.</p>
+        </div>
+        <div class="value-item">
+          <h4><span class="vi">🔍</span> Security as a Differentiator</h4>
+          <p>I see security as something that makes me a more thoughtful developer — not a separate identity. It shapes how I think about what I build.</p>
+        </div>
+        <div class="value-item">
+          <h4><span class="vi">📈</span> Always in Progress</h4>
+          <p>I don't think I'll ever feel like I "know enough" — and I'm fine with that. Curiosity and consistency matter more than having all the answers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Skills ── -->
+  <section id="skills">
+    <div class="section-label">technical skills</div>
+    <h2>What I <span class="accent">Work With</span></h2>
+    <p class="section-desc">Built through real projects, internships, and a lot of trial and error — not just coursework.</p>
+    <div class="skills-grid reveal">
+      <div class="skill-group">
+        <div class="skill-group-icon">💻</div>
+        <h3>Software Development</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">C++</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Flask</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">Problem Solving</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-icon">🌐</div>
+        <h3>Web Development</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">HTML5</span>
+          <span class="skill-tag">CSS3</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Responsive Design</span>
+          <span class="skill-tag">UI/UX Basics</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-icon">🔐</div>
+        <h3>Cybersecurity</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Web Security</span>
+          <span class="skill-tag">VAPT</span>
+          <span class="skill-tag">OWASP Top 10</span>
+          <span class="skill-tag">Burp Suite</span>
+          <span class="skill-tag">Nmap</span>
+          <span class="skill-tag">Kali Linux</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-icon">⚙️</div>
+        <h3>Tools &amp; Workflow</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">GitHub</span>
+          <span class="skill-tag">Linux CLI</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">VS Code</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Projects ── -->
+  <section id="projects">
+    <div class="section-label">projects</div>
+    <h2>Things I've <span class="accent">Built</span></h2>
+    <p class="section-desc">Real problems, real solutions — shipped with care and curiosity.</p>
+    <div class="projects-grid reveal">
+
+      <div class="project-card project-featured">
+        <div class="project-card-top">
+          <div class="project-type">Full-Stack · Cybersecurity Platform</div>
+          <span class="project-live-badge"><span class="live-dot"></span> Live</span>
+        </div>
+        <h3>VulnWatch <span class="project-version">v1.0</span></h3>
+        <p class="project-tagline">Vulnerability Monitoring &amp; Attack Surface Analysis</p>
+        <p>A full-stack cybersecurity platform that scans real-world domains for exposed technologies, misconfigurations, and known CVEs — then keeps watching them. Combines technology fingerprinting, exploit intelligence, subdomain discovery, and automated alerting into a single dashboard.</p>
+        <ul class="project-features">
+          <li><strong>CVE Detection</strong> — Matches detected technologies against NVD with verified &amp; possible exploit mapping</li>
+          <li><strong>Exploit Intelligence</strong> — Surfaces publicly available exploits from Exploit-DB in real time</li>
+          <li><strong>Subdomain Enumeration</strong> — Discovers exposed subdomains across multiple intelligence sources</li>
+          <li><strong>Continuous Monitoring</strong> — Automated email alerts when new vulnerabilities are detected</li>
+          <li><strong>PDF Reports</strong> — Downloadable vulnerability assessment reports per scanned domain</li>
+          <li><strong>Risk Scoring</strong> — Calculates security posture from headers, CVEs, tech stack, and surface area</li>
+        </ul>
+        <div class="project-tech">
+          <span>Python</span><span>Flask</span><span>MongoDB</span><span>APScheduler</span><span>NVD API</span><span>Exploit-DB</span><span>SMTP</span><span>Render</span>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/rohit0472/VulnWatch" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://vulnwatch-p7vd.onrender.com/dashboard/" target="_blank" class="btn btn-ghost btn-sm"><i class="fas fa-arrow-up-right-from-square"></i> Live Demo</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-type">Frontend</div>
+        <h3>Personal Portfolio</h3>
+        <p>This site. A terminal-entry portfolio with smooth animations, a cursor glow, and a 3D-tilt hero card. Designed from scratch with a focus on making something that actually feels premium.</p>
+        <div class="project-tech">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Design</span>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/rohit0472/Portfolio" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-github"></i> GitHub</a>
+          <span class="btn btn-ghost btn-sm" style="cursor:default; opacity:.5">You're here</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-type">Security Tool</div>
+        <h3>TrapScan — Phishing Link Detector</h3>
+        <p>A Python tool that runs URLs through multiple heuristics to flag phishing attempts and generate a readable risk report. Built to apply security concepts to something actually useful.</p>
+        <div class="project-tech">
+          <span>Python</span><span>URL Analysis</span><span>Heuristics</span><span>Security</span>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/rohit0472/TrapScan" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-type">Web App</div>
+        <h3>QuickEats — Food Delivery UI</h3>
+        <p>An interactive food ordering interface with menu browsing and a working cart — built with vanilla JS. Focused on getting the UX flow right without any frameworks.</p>
+        <div class="project-tech">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>UX</span>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/rohit0472/QuickEats" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-type">UI Clone</div>
+        <h3>Amazon Clone</h3>
+        <p>A fully responsive Amazon-style front end in pure HTML and CSS. Less about originality, more about getting layout precision and real-world UI replication right.</p>
+        <div class="project-tech">
+          <span>HTML</span><span>CSS</span><span>Responsive</span><span>UI</span>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/rohit0472/Amazon-Clone" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Experience ── -->
+  <section id="experience">
+    <div class="section-label">experience</div>
+    <h2>Where I've <span class="accent">Worked</span></h2>
+    <p class="section-desc">Internships that built real skills across security and software development.</p>
+    <div class="exp-timeline reveal">
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3>Remote VAPT Intern</h3>
+            <span class="exp-period">Feb 2026 – Mar 2026</span>
+          </div>
+          <div class="exp-org">RK InfoSec Solutions</div>
+          <p class="exp-desc">Learned real-world security workflows, tools, and methodologies under professional guidance in a live VAPT environment.</p>
+          <ul class="exp-list">
+            <li>Reconnaissance and vulnerability assessment training</li>
+            <li>Hands-on with industry-standard security tools</li>
+            <li>Penetration testing process and methodology</li>
+            <li>Professional security reporting skills</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3>Virtual Cybersecurity Intern</h3>
+            <span class="exp-period">Dec 2025 – Jan 2026</span>
+          </div>
+          <div class="exp-org">CyberWarLab</div>
+          <p class="exp-desc">Hands-on CTF-based training applying penetration testing concepts in realistic vulnerable lab environments.</p>
+          <ul class="exp-list">
+            <li>Applied core pentesting concepts in real-world style CTF labs</li>
+            <li>Practiced enumeration, web exploitation, and post-exploitation</li>
+            <li>Developed attacker mindset and security reporting skills</li>
+            <li>Worked through realistic lab scenarios end-to-end</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3>Cybersecurity &amp; Ethical Hacking Intern</h3>
+            <span class="exp-period">Aug 2025 – Oct 2025</span>
+          </div>
+          <div class="exp-org">Cyber Shakti Foundation</div>
+          <p class="exp-desc">Built foundational cybersecurity knowledge covering common attack vectors and basic defense techniques.</p>
+          <ul class="exp-list">
+            <li>Core concepts of ethical hacking and cybersecurity</li>
+            <li>Common vulnerabilities, attack types, and defenses</li>
+            <li>Introductory exposure to penetration testing methodologies</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3>Front-End Development Trainee</h3>
+            <span class="exp-period">Jul 2025 – Aug 2025</span>
+          </div>
+          <div class="exp-org">CSRBOX Foundation × IBM SkillsBuild</div>
+          <p class="exp-desc">Project-based learning program building frontend skills through real tasks rather than passive theory.</p>
+          <ul class="exp-list">
+            <li>Built web projects using HTML, CSS, and JavaScript</li>
+            <li>Task-driven approach to real-world frontend development</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Education ── -->
+  <section id="education">
+    <div class="section-label">education</div>
+    <h2>Academic <span class="accent">Foundation</span></h2>
+    <div class="edu-card reveal">
+      <div class="edu-header">
+        <div>
+          <h3>Bachelor of Computer Applications — Cybersecurity</h3>
+          <div class="edu-org">Jaipur National University</div>
+          <div class="edu-time">2024 – 2027 &nbsp;·&nbsp; Currently enrolled</div>
+        </div>
+        <div class="edu-badge">
+          <div class="gpa-val">8.4</div>
+          <div class="gpa-lbl">GPA</div>
+        </div>
+      </div>
+      <p class="edu-desc">Specialized program covering core computing fundamentals with a cybersecurity focus — including networking, system security, ethical hacking principles, and multiple programming languages.</p>
+      <ul class="edu-list">
+        <li>Networking &amp; System Security</li>
         <li>Ethical Hacking Fundamentals</li>
         <li>Programming Languages</li>
-        <li>Linux & Database Concepts</li>
+        <li>Linux &amp; Database Concepts</li>
+        <li>Operating Systems</li>
       </ul>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact">
-  <h2>Let's Connect</h2>
-  <p class="center-text">Open to collaborations, security discussions, CTFs and opportunities.</p>
-  <div class="contact-wrap">
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/rohit-sharma-316912321" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://github.com/rohit0472" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="mailto:rohitsharmaa0906@gmail.com?subject=Contact from Portfolio"><i class="fas fa-envelope"></i></a>
+  <!-- ── Contact ── -->
+  <section id="contact">
+    <div class="section-label">contact</div>
+    <h2>Let's <span class="accent">Connect</span></h2>
+    <p class="contact-sub">Open to internships, collaborations, tech discussions, and building meaningful things.</p>
+    <div class="contact-inner reveal">
+      <div class="social-grid">
+        <a href="https://www.linkedin.com/in/rohit-sharma-316912321" target="_blank" class="social-btn">
+          <i class="fab fa-linkedin-in"></i> LinkedIn
+        </a>
+        <a href="https://github.com/rohit0472" target="_blank" class="social-btn">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="mailto:rohitsharmaa0906@gmail.com?subject=Contact from Portfolio" class="social-btn">
+          <i class="fas fa-envelope"></i> Email
+        </a>
+      </div>
+      <a href="mailto:rohitsharmaa0906@gmail.com" class="email-cta">
+        <i class="fas fa-at"></i> rohitsharmaa0906@gmail.com
+      </a>
     </div>
-    <p class="email-text"><a href="mailto:rohitsharmaa0906@gmail.com">rohitsharmaa0906@gmail.com</a></p>
-  </div>
-</section>
+  </section>
 
-<footer class="site-footer">
-  &copy; 2026 Rohit Sharma. All rights reserved.
-</footer>
+  <!-- ── Footer ── -->
+  <footer class="site-footer">
+    Built with <span>curiosity</span>, code &amp; consistency &nbsp;·&nbsp; &copy; 2026 Rohit Sharma
+  </footer>
 
-</div>
+</div><!-- /main-portfolio -->
 
 <script src="script.js"></script>
 </body>
 </html>
-
-
